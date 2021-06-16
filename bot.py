@@ -2,8 +2,11 @@ from telegram.ext import Updater
 from telegram.ext import CommandHandler
 import random
 import os
+from dotenv import load_dotenv
 
-token = os.getenv('BOT_TOKEN')
+load_dotenv()
+token = os.getenv("BOT_TOKEN")
+
 updater = Updater(token = token, use_context=True)
 dispatcher = updater.dispatcher
 
@@ -27,7 +30,3 @@ banana_handler = CommandHandler('banana', banana)
 dispatcher.add_handler(banana_handler)
 
 updater.start_polling()
-
-
-
-
